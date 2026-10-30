@@ -109,7 +109,7 @@ onRaceChange(race => {
     // startDot is a circle, so it means we need to define cx, cy
     startDot.transition().duration(duration).attr('cx', startX).attr('cy', startY);
     // startLabel is a text, we need to define x and y
-    startDot.transition().duration(duration).attr('x', startX + 12).attr('y', startY - 10);
+    startLabel.transition().duration(duration).attr('x', startX + 12).attr('y', startY - 10);
 
     // Update the aria-label of the svg with the race name
     svg.attr('aria-label', `Track outline of the ${race.label}`);

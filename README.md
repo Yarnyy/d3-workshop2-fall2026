@@ -81,7 +81,7 @@ In the 2025 Japanese Grand Prix, the race trace shows how the gaps to Verstappen
 
 **Bonus** (optional): which race did you add, and why?
 
->
+> I added the 2024 Sao Paulo Grand Prix because it was run fully in the wet with a red flag, so it tests the charts with only intermediate and Wet tyres, and it shows Verstappen winning from the 17th on the grid. 
 
 ---
 
