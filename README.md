@@ -70,6 +70,8 @@ git push
 
 **Participation answer** (3 sentences): which driver's strategy differed most from the winner's, and what on the chart shows it?
 
+STR deviated most from VER strategy. VER made one stop, running Medium until about lap 21 and Hard to the end, while STR made two stops, going Soft -> Hard -> Medium, which shows up as three bards in his row instead of two. STR also finished at the bottom of the chart and his last bar ends before lap 53, so his extra stop didn't pay off and he finished a lap down. 
+
 >
 
 **Assignment** (2 or 3 sentences): pick one race. What does the race trace show that a plain chart of lap times would hide?
