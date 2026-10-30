@@ -75,6 +75,7 @@ STR deviated most from VER strategy. VER made one stop, running Medium until abo
 >
 
 **Assignment** (2 or 3 sentences): pick one race. What does the race trace show that a plain chart of lap times would hide?
+In the 2025 Japanese Grand Prix, the race trace shows how the gaps to Verstappen built up over the race, which a plain lap-time chart hides because every driver's lap times sit within a few tenths of each other. For example, Norris stays only about 1.5 s behind Verstappeen for the whole stint, and pit stops show up as clear drops of about 20s, like Russell falling from about +11s to +31s on lap 20. On a lap-time chart, that stop would be a single spike, and you couldn't tell who was actually ahead or how much time they lost overall.
 
 >
 
