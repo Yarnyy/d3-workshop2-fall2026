@@ -63,10 +63,16 @@ const line = d3.line().curve(d3.curveCatmullRomClosed.alpha(0.5))
 onRaceChange(race => {
     const points = race.outline;
     console.log('Outline points:', points.length, points.slice(0, 3));
+    
 
     // TODO STEP 1: How big is the track? Use d3.extent to get [min, max] of x and of y
+<<<<<<< HEAD
     const xRange = d3.extent(points, d => d[0]);
     const yRange = d3.extent(points, d => d[1]);
+=======
+    const xRange = d3.extent(points, d => d[0]); //[0, 20000]
+    const yRange = d3.extent(points, d=> d[1]);
+>>>>>>> e8d175dd94f4a3d4be999ec357293707e3df718f
 
     const trackWidth = xRange[1] - xRange[0];
     const trackHeight = yRange[1] - yRange[0];
@@ -76,12 +82,17 @@ onRaceChange(race => {
     // k is the min value between two values:
     // screen width - left and right padding over the track width
     // screen height - top and bottom padding over the track height
+<<<<<<< HEAD
     // k =
     const k = Math.min((width - 2 * padding) / trackWidth, (height - 2 * padding) / trackHeight);
+=======
+    const k = Math.min((width - padding*2)/trackWidth, (height-padding*2)/trackHeight);
+>>>>>>> e8d175dd94f4a3d4be999ec357293707e3df718f
 
     // TODO STEP 3: Center the track 
     // Right now the track would start from the top left corner of the canvas
     // We need to create an offset to start from the center
+<<<<<<< HEAD
     const offsetX = (width - k * trackWidth) / 2;
     const offsetY = (height - k * trackHeight) / 2;
 
@@ -94,6 +105,20 @@ onRaceChange(race => {
     const y = d3.scaleLinear()
         .domain(yRange)
         .range([height - offsetY, height - offsetY - k*trackHeight ]); 
+=======
+    const offsetX = (width - k*trackWidth)/2;
+    const offsetY = (height - k*trackHeight)/2;
+    
+    
+    // TODO STEP 4: Build scales x and y, using scale factor x
+    const x = d3.scaleLinear()
+        .domain(xRange)
+        .range([offsetX, offsetX + k*trackWidth]);
+
+    const y = d3.scaleLinear()
+        .domain(yRange)
+        .range([height-offsetY, height - offsetY - k*trackHeight]); // Remember: SVG y points DOWN, so flip the range of y (otherwise the circuit is mirrored)
+>>>>>>> e8d175dd94f4a3d4be999ec357293707e3df718f
     
     // TODO STEP 5: convert the points to screen positions and set the path's "d" attribute
     const screenPoints = points.map(d => [x(d[0]), y(d[1])]);
@@ -102,6 +127,7 @@ onRaceChange(race => {
     // track.transition().duration(duration).attr('d', ...)
     // ...and at the end of this function: duration = 750;
     track.transition().duration(duration).attr('d', line(screenPoints));
+<<<<<<< HEAD
 
     // TODO STEP 7: move the start/finish dot and label to the first point of the lap
     const [startX, startY] = screenPoints[0];
@@ -110,13 +136,26 @@ onRaceChange(race => {
 
     // startLabel is a text, we need to define x and y
     startLabel.transition().duration(duration).attr('x', startX + 12).attr('y', startY - 10);
+=======
+
+
+    // TODO STEP 7: move the start/finish dot and label to the first point of the lap
+    const [startX, startY] = screenPoints[0];
+    // startDot is a circle, so it means we need to define cx, cy
+    startDot.transition().duration(duration).attr('cx', startX).attr('cy', startY);
+    // startLabel is a text, we need to define x and y
+    startDot.transition().duration(duration).attr('x', startX + 12).attr('y', startY - 10);
+>>>>>>> e8d175dd94f4a3d4be999ec357293707e3df718f
 
     // Update the aria-label of the svg with the race name
     svg.attr('aria-label', `Track outline of the ${race.label}`);
     replayDot.interrupt().attr('opacity', 0);
 
     duration = 750;
+<<<<<<< HEAD
 
+=======
+>>>>>>> e8d175dd94f4a3d4be999ec357293707e3df718f
 });
 
 
@@ -155,3 +194,4 @@ replayButton.on('click', () => {
         .on('end interrupt', () => replayButton.property('disabled', false));
 
 });
+
